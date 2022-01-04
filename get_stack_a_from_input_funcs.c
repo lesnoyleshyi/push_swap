@@ -15,11 +15,11 @@ void    ft_get_stack_a(t_list **lst, char *argv[])
         ft_is_num_already_in_list(number, lst);
         heap_number = (int *)malloc(sizeof(int));
         if (!heap_number)
-            ft_perror_and_exit("Error\nCan't allocate memory");
+            ft_perror_and_exit("Error\nCan't allocate memory\n");
         *heap_number = number;
         node = ft_lstnew(heap_number);
         if (!node)
-            ft_perror_and_exit("Error\nCan't allocate memory");
+            ft_perror_and_exit("Error\nCan't allocate memory\n");
         ft_lstadd_back(lst,  node);
         i++;
     }

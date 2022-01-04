@@ -9,4 +9,8 @@ void    ft_perror_and_exit(const char *message);
 void    ft_valid_number(const char *str);
 int     ft_long_atoi(const char *str);
 void    ft_print_list_content(t_list *lst);
+
+t_list	*ft_dup_list(t_list *unsorted_list);
+t_list *ft_bubble_sort_ll(t_list *unsorted_list);
+void	ft_swap_nodes_content(t_list *cur_node, t_list *next_node);
 #endif

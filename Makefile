@@ -5,7 +5,7 @@ HEADER	=	push_swap.h
 
 LIBFT	=	./libft/libft.a
 
-SRCS	=	push_swap.c get_stack_a_from_input_funcs.c
+SRCS	=	push_swap.c get_stack_a_from_input_funcs.c ft_sort_funcs.c
 
 OBJS	=	${SRCS:.c=.o}
 
