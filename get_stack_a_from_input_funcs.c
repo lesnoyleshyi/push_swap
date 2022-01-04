@@ -12,8 +12,7 @@ void    ft_get_stack_a(t_list **lst, char *argv[])
     while (argv[i])
     {
         number = ft_long_atoi(argv[i]);
-        if (i > 1)
-            ft_is_num_already_in_list(number, *lst);
+        ft_is_num_already_in_list(number, lst);
         heap_number = (int *)malloc(sizeof(int));
         if (!heap_number)
             ft_perror_and_exit("Error\nCan't allocate memory");
@@ -21,21 +20,21 @@ void    ft_get_stack_a(t_list **lst, char *argv[])
         node = ft_lstnew(heap_number);
         if (!node)
             ft_perror_and_exit("Error\nCan't allocate memory");
-        if (i == 1)
-            *lst = node;
-        else
-            ft_lstadd_back(lst, node);
+        ft_lstadd_back(lst,  node);
         i++;
     }
 }
 
-void    ft_is_num_already_in_list(int number, t_list *lst)
+void    ft_is_num_already_in_list(int number, t_list **lst)
 {
-    while (lst != NULL)
+    t_list	*p_node;
+
+    p_node = *lst;
+	while (p_node != NULL)
     {
-        if (lst->content && *((int *) (lst->content)) == number)
+		if (p_node->content && *((int *)(p_node->content)) == number)
             ft_perror_and_exit("Error\nFound duplicated number");
-        lst = lst->next;
+		p_node = p_node->next;
     }
 }
 

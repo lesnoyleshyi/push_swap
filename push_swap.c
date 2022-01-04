@@ -10,6 +10,7 @@ int main(int argc, char* argv[])
         ft_perror_and_exit("Error\nYou should provide at least two integers");
     ft_get_stack_a(&stack_a, argv);
     ft_print_list_content(stack_a);
+	ft_lstclear(&stack_a, free);
 }
 
 void    ft_perror_and_exit(const char *message)
