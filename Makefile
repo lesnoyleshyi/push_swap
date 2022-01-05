@@ -5,7 +5,8 @@ HEADER	=	push_swap.h
 
 LIBFT	=	./libft/libft.a
 
-SRCS	=	push_swap.c get_stack_a_from_input_funcs.c ft_sort_funcs.c
+SRCS	=	push_swap.c	get_stack_a_from_input_funcs.c	ft_sort_funcs.c \
+			ft_index_funcs.c
 
 OBJS	=	${SRCS:.c=.o}
 
@@ -41,7 +42,10 @@ debug		:
 				${CC} ${CFLAGS} -g ${SRCS} -L./libft -lft -o ${NAME}_debug
 
 ch_leaks	:	${NAME}
-				leaks -atExit -- ./push_swap 1 2 3 4 5 6 7 8 9 10 -100 2147483647
+				leaks -atExit -- ./push_swap 1 3 2 7 5 6 4 10 9 8 -100 2147483647
+
+run			:	${NAME}
+				./push_swap 1 3 2 7 5 6 4 10 9 8 -100 2147483647
 
 all			:	${NAME} bonus
 

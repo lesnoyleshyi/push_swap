@@ -13,4 +13,7 @@ void    ft_print_list_content(t_list *lst);
 t_list	*ft_dup_list(t_list *unsorted_list);
 t_list *ft_bubble_sort_ll(t_list *unsorted_list);
 void	ft_swap_nodes_content(t_list *cur_node, t_list *next_node);
+
+void	ft_index_this_list(t_list *list_to_index);
+void	ft_write_to_score_field(t_list *list_to_index, t_list *sorted_list);
 #endif
