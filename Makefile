@@ -41,11 +41,21 @@ fclean		:
 debug		:
 				${CC} ${CFLAGS} -g ${SRCS} -L./libft -lft -o ${NAME}_debug
 
+
 ch_leaks	:	${NAME}
 				leaks -atExit -- ./push_swap 1 3 2 7 5 6 4 10 9 8 -100 2147483647
 
 run			:	${NAME}
 				./push_swap 1 3 2 7 5 6 4 10 9 8 -100 2147483647
+
+two_elem	:	${NAME}
+				./push_swap 5 10
+
+three_elem	:	${NAME}
+				./push_swap 5 10 15
+
+four_elem	:	${NAME}
+				./push_swap 5 10 15 20
 
 all			:	${NAME} bonus
 

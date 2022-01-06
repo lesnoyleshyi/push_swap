@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_push_to_stack(t_list *el_owner, t_list *elem, t_list **stack, int top)
+void	ft_push(t_list **el_owner, t_list *elem, t_list **stack, int top)
 {
 	if (top == 1)
 	{
@@ -22,59 +22,50 @@ void	ft_push_to_stack(t_list *el_owner, t_list *elem, t_list **stack, int top)
 		ft_push_back(el_owner, elem, stack);
 }
 
-void	ft_push_head(t_list *elem_owner, t_list *elem, t_list **stack)
+void	ft_push_head(t_list **elem_owner, t_list *elem, t_list **stack)
 {
-	t_list	*cur_node;
-
-	cur_node = elem_owner;
-	if (cur_node->next == NULL)	// if len == 1
-	{
-		elem_owner = NULL;
-		cur_node = NULL;
-	}
-	while (cur_node)			// if len > 1
-	{
-		if (cur_node->next->next == NULL
-			&& *(int *)cur_node->next->content == *(int *)elem->content)
-		{
-			cur_node->next = NULL;
-			break ;
-		}
-		if (*(int *)cur_node->next->content == *(int *)elem->content)
-		{
-			cur_node->next = elem->next;
-			break ;
-		}
-		cur_node = cur_node->next;
-	}
+	ft_remove_from_stack(elem_owner, elem);
 	ft_lstadd_front(stack, elem);
 }
 
-void	ft_push_back(t_list *elem_owner, t_list *elem, t_list **stack)
+void	ft_push_back(t_list **elem_owner, t_list *elem, t_list **stack)
+{
+	ft_remove_from_stack(elem_owner, elem);
+	elem->next = NULL;
+	ft_lstadd_back(stack, elem);
+}
+
+void	ft_remove_from_stack(t_list **elem_owner, t_list *elem)
 {
 	t_list	*cur_node;
 
-	cur_node = elem_owner;
-	if (cur_node->next == NULL)	// if len == 1
+	cur_node = *elem_owner;
+	if (elem == NULL || *elem_owner == NULL)
+		return ;
+	if (cur_node == elem)
 	{
-		elem_owner = NULL;
-		cur_node = NULL;
+		ft_remove_from_top(elem_owner);
+		return ;
 	}
-	while (cur_node)			// if len > 1
+	while (cur_node && cur_node->next)
 	{
-		if (cur_node->next->next == NULL
-			&& *(int *)cur_node->next->content == *(int *)elem->content)
-		{
-			cur_node->next = NULL;
-			break ;
-		}
 		if (*(int *)cur_node->next->content == *(int *)elem->content)
 		{
-			cur_node->next = elem->next;
+			cur_node->next = cur_node->next->next;
 			break ;
 		}
 		cur_node = cur_node->next;
 	}
-	elem->next = NULL;
-	ft_lstadd_back(stack, elem);
+}
+
+void	ft_remove_from_top(t_list **list)
+{
+	if (*list == NULL)
+		return ;
+	if ((*list)->next == NULL)
+	{
+		*list = NULL;
+		return ;
+	}
+	*list = (*list)->next;
 }

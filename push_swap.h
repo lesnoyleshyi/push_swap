@@ -17,9 +17,11 @@ void	ft_swap_nodes_content(t_list *cur_node, t_list *next_node);
 void	ft_index_this_list(t_list *list_to_index);
 void	ft_write_to_score_field(t_list *list_to_index, t_list *sorted_list);
 
-void	ft_push_head(t_list *elem_owner, t_list *elem, t_list **stack);
-void	ft_push_back(t_list *elem_owner, t_list *elem, t_list **stack);
-void	ft_push_to_stack(t_list *el_owner, t_list *elem, t_list **stack, int top);
+void	ft_push_head(t_list **elem_owner, t_list *elem, t_list **stack);
+void	ft_push_back(t_list **elem_owner, t_list *elem, t_list **stack);
+void	ft_push(t_list **el_owner, t_list *elem, t_list **stack, int top);
+void	ft_remove_from_stack(t_list **elem_owner, t_list *elem);
+void	ft_remove_from_top(t_list **list);
 
 void	ft_presort(t_list **stack_a, t_list **stack_b);
 #endif
