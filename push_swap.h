@@ -26,10 +26,14 @@ void	ft_remove_from_top(t_list **list);
 void	ft_presort(t_list **stack_a, t_list **stack_b);
 
 void	ft_score_stack_b(t_list *stack_b, t_list *stack_a);
-void	ft_get_all_costs(t_list *elem, t_list *stack_b, t_list *stack_a);
+int	ft_get_min_cost(t_list *elem, t_list *stack_b, t_list *stack_a);
 int	ft_get_rb_cost(int el_value, t_list *stack_b);
 int	ft_get_rrb_cost(int el_value, t_list *stack_b);
 int	ft_get_ra_cost(int el_value, t_list *stack_a);
 int	ft_get_rra_cost(int el_value, t_list *stack_a);
 int	ft_get_appropriate_num(t_list *stack, int val);
+
+void	ft_little_sort(t_list **stack);
+void	ft_sort_three(t_list **stack);
+void	ft_sort_two(t_list **stack);
 #endif

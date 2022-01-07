@@ -7,7 +7,7 @@ LIBFT	=	./libft/libft.a
 
 SRCS	=	push_swap.c	ft_get_stack_a_from_input_funcs.c	ft_sort_funcs.c \
 			ft_index_funcs.c	ft_push_funcs.c	ft_presort_funcs.c \
-			ft_b_scoring_funcs.c
+			ft_b_scoring_funcs.c	ft_little_sort_funcs.c
 
 OBJS	=	${SRCS:.c=.o}
 
@@ -49,13 +49,13 @@ ch_leaks	:	${NAME}
 run			:	${NAME}
 				./push_swap 1 3 2 7 5 6 4 10 9 8 -100 2147483647
 
-two_elem	:	${NAME}
-				./push_swap 5 10
+run_two		:	${NAME}
+				./push_swap 10 5
 
-three_elem	:	${NAME}
+run_three	:	${NAME}
 				./push_swap 5 10 15
 
-four_elem	:	${NAME}
+run_four	:	${NAME}
 				./push_swap 5 10 15 20
 
 all			:	${NAME} bonus
