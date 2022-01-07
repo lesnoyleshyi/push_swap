@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_little_sort(t_list **stack)
+void	ft_little_cir_sort(t_list **stack)
 {
 	int	stack_len;
 
@@ -20,7 +20,7 @@ void	ft_little_sort(t_list **stack)
 	if (stack_len == 2)
 		ft_sort_two(stack);
 	else
-		ft_sort_three(stack);
+		ft_cir_sort_three(stack);
 }
 
 void	ft_sort_two(t_list **stack)
@@ -38,10 +38,30 @@ void	ft_sort_two(t_list **stack)
 	}
 }
 
-void	ft_sort_three(t_list **stack)
+void	ft_cir_sort_three(t_list **stack)
+{
+	int		v1;
+	int		v2;
+	int		v3;
+
+	v1 = *(int *)(*stack)->content;
+	v2 = *(int *)((*stack)->next->content);
+	v3 = *(int *)((*stack)->next->next->content);
+	if (!(((v1 > v2) && (v2 > v3))
+			|| ((v1 < v2) && (v2 > v3) && (v3 > v1))
+			|| ((v1 > v2) && (v2 < v3) && (v3 > v1))))
+		return ;
+	ft_swap_top(stack);
+}
+
+void	ft_swap_top(t_list **stack)
 {
 	t_list	*first_node;
+	t_list	*second_node;
 
 	first_node = *stack;
-	return ;
+	second_node = (*stack)->next;
+	first_node->next = second_node->next;
+	second_node->next = first_node;
+	*stack = second_node;
 }

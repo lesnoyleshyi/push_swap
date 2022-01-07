@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
 //		return (0);
 //	}
 	ft_presort(&stack_a, &stack_b);
-	ft_little_sort(&stack_a);
+	ft_little_cir_sort(&stack_a);
 //	ft_move_back_from_stack_b(&stack_a, &stack_b);
 //	ft_final_sort(&stack_a);
 

@@ -53,7 +53,7 @@ run_two		:	${NAME}
 				./push_swap 10 5
 
 run_three	:	${NAME}
-				./push_swap 5 10 15
+				./push_swap 5 15 10
 
 run_four	:	${NAME}
 				./push_swap 5 10 15 20

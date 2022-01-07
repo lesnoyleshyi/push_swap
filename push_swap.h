@@ -33,7 +33,8 @@ int	ft_get_ra_cost(int el_value, t_list *stack_a);
 int	ft_get_rra_cost(int el_value, t_list *stack_a);
 int	ft_get_appropriate_num(t_list *stack, int val);
 
-void	ft_little_sort(t_list **stack);
-void	ft_sort_three(t_list **stack);
+void	ft_little_cir_sort(t_list **stack);
+void	ft_cir_sort_three(t_list **stack);
 void	ft_sort_two(t_list **stack);
+void	ft_swap_top(t_list **stack);
 #endif
