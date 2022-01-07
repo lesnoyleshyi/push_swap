@@ -1,12 +1,6 @@
 
 #include "push_swap.h"
 
-typedef	struct {
-	int min_score;
-	int med_score;
-	int max_score;
-}	stack_meta;
-
 int main(int argc, char* argv[])
 {
     t_list  *stack_a;
@@ -20,6 +14,7 @@ int main(int argc, char* argv[])
 	ft_presort(&stack_a, &stack_b);
 	ft_print_list_content(stack_a);
 	ft_print_list_content(stack_b);
+	ft_score_stack_b(stack_b, stack_a);
 	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);
 }

@@ -12,14 +12,14 @@
 
 #include "push_swap.h"
 
-void	ft_score_stack_b(t_list **stack_b, t_list **stack_a)
+void	ft_score_stack_b(t_list *stack_b, t_list *stack_a)
 {
 	t_list	*node;
 
-	node = *stack_b;
+	node = stack_b;
 	while (node)
 	{
-		get_all_costs(node, stack_b, stack_a);
+		ft_get_all_costs(node, stack_b, stack_a);
 		node = node->next;
 	}
 }
@@ -51,7 +51,7 @@ void	ft_get_all_costs(t_list *elem, t_list *stack_b, t_list *stack_a)
 	cost_rach = ft_itoa(cost_ra);
 	cost_rrach = ft_itoa(cost_rra);
 	min_cost_ch = ft_itoa(min_cost);
-	ft_putstr_fd("\ncosts for elem:\n", 1);
+	ft_putstr_fd("costs for elem:\n", 1);
 	ft_putstr_fd("cost rb: ", 1);
 	ft_putstr_fd(cost_rbch, 1);
 	ft_putstr_fd("\n", 1);
@@ -66,7 +66,7 @@ void	ft_get_all_costs(t_list *elem, t_list *stack_b, t_list *stack_a)
 	ft_putstr_fd("\n", 1);
 	ft_putstr_fd("Result minimum cost: ", 1);
 	ft_putstr_fd(min_cost_ch, 1);
-	ft_putstr_fd("\n", 1);
+	ft_putstr_fd("\n\n", 1);
 	free(cost_rbch);
 	free(cost_rrbch);
 	free(cost_rach);
@@ -98,7 +98,7 @@ int	ft_get_rrb_cost(int el_value, t_list *stack_b)
 	t_list	*node;
 
 	node = stack_b;
-	list_len = ft_lstsize(*stack_b);
+	list_len = ft_lstsize(stack_b);
 	pos = 0;
 	while (node)
 	{
@@ -119,8 +119,14 @@ int	ft_get_ra_cost(int el_value, t_list *stack_a)
 	int 	appr_num;
 	int		pos;
 	t_list	*node;
+	char	*apr_num;
 
 	appr_num = ft_get_appropriate_num(stack_a, el_value);
+	apr_num = ft_itoa(appr_num);
+	ft_putstr_fd("Appropriate number: ", 1);
+	ft_putstr_fd(apr_num, 1);
+	ft_putstr_fd("\n", 1);
+	free(apr_num);
 	node = stack_a;
 	pos = 0;
 	while (node)
@@ -146,7 +152,7 @@ int	ft_get_rra_cost(int el_value, t_list *stack_a)
 	node = stack_a;
 	while (node)
 	{
-		if (*(int *)node->content == el_value)
+		if (*(int *)node->content == appr_num)
 		{
 			if (pos == 0)
 				return (0);
