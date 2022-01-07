@@ -17,7 +17,7 @@ void	ft_score_stack_b(t_list *stack_b, t_list *stack_a)
 	t_list	*node;
 	int		min_node_cost;
 	int		least_score;
-	char	*deb;
+//	char	*deb;
 
 	least_score = 100;
 	node = stack_b;
@@ -29,11 +29,11 @@ void	ft_score_stack_b(t_list *stack_b, t_list *stack_a)
 		if (min_node_cost < least_score)
 			least_score = min_node_cost;
 	}
-	deb = ft_itoa(least_score);
-	ft_putstr_fd("\nLeast score is ", 1);
-	ft_putstr_fd(deb, 1);
-	ft_putstr_fd("\n", 1);
-	free(deb);
+//	deb = ft_itoa(least_score);
+//	ft_putstr_fd("\nLeast score is ", 1);
+//	ft_putstr_fd(deb, 1);
+//	ft_putstr_fd("\n", 1);
+//	free(deb);
 }
 
 // this function is for debug

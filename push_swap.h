@@ -37,4 +37,7 @@ void	ft_little_cir_sort(t_list **stack);
 void	ft_cir_sort_three(t_list **stack);
 void	ft_sort_two(t_list **stack);
 void	ft_swap_top(t_list **stack);
+
+int	ft_is_cir_sorted(t_list *stack);
+int	ft_get_min_val(t_list *stack);
 #endif
