@@ -8,7 +8,9 @@ LIBFT	=	./libft/libft.a
 SRCS	=	push_swap.c	ft_get_stack_a_from_input_funcs.c	ft_sort_funcs.c \
 			ft_index_funcs.c	ft_push_funcs.c	ft_presort_funcs.c \
 			ft_b_scoring_funcs.c	ft_little_sort_funcs.c \
-			ft_is_cir_sorted_funcs.c	ft_move_back_from_stack_b_funcs.c
+			ft_is_cir_sorted_funcs.c	ft_move_back_from_stack_b_funcs.c \
+			ft_move_rb_rrb_ra_rra_funcs.c	ft_rb_ra_rrb_rra_funcs.c \
+			ft_move_rr_rrr_funcs.c	ft_rr_rrr_funcs.c
 
 OBJS	=	${SRCS:.c=.o}
 

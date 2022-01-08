@@ -43,5 +43,32 @@ int	ft_get_min_val(t_list *stack);
 void	ft_n1(int *p_flg, t_list **p_lnode, t_list **p_node, t_list *stack);
 int	ft_n2(int next_val, int min_val, int flag, t_list *last_node);
 
+
+
 void	ft_move_back_from_stack_b(t_list **stack_a, t_list **stack_b);
+
+t_list	*ft_get_cheapest_node(t_list *stack_b);
+void	ft_cheapest_move(t_list *node_to_move, t_list **dst, t_list **src);
+int	ft_make_choice(int rb, int ra, int rrb, int rra);
+void	ft_choose_move(int choice, t_list *node, t_list **dst, t_list **src);
+int ft_get_rr_rrr_possible_count(int rb, int ra);
+
+void	ft_move_rb_ra(t_list *node, t_list **dst, t_list **src);
+void	ft_move_rrb_ra(t_list *node, t_list **dst, t_list **src);
+void	ft_move_rb_rra(t_list *node, t_list **dst, t_list **src);
+void	ft_move_rrb_rra(t_list *node, t_list **dst, t_list **src);
+
+void	ft_move_rr(t_list *node, t_list **dst, t_list **src);
+void	ft_move_rrr(t_list *node, t_list **dst, t_list **src);
+
+void	ft_rb(t_list **stack_b);
+void	ft_rrb(t_list **stack_b);
+void	ft_ra(t_list **stack_a);
+void	ft_rra(t_list **stack_a);
+
+void	ft_rr(t_list **stack_a, t_list **stack_b);
+void	ft_rrr(t_list **stack_a, t_list **stack_b);
+void	ft_pa(t_list **stack_a, t_list **stack_b);
+void	ft_pb(t_list **stack_a, t_list **stack_b);
+
 #endif
