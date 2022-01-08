@@ -42,4 +42,6 @@ int	ft_is_cir_sorted(t_list *stack);
 int	ft_get_min_val(t_list *stack);
 void	ft_n1(int *p_flg, t_list **p_lnode, t_list **p_node, t_list *stack);
 int	ft_n2(int next_val, int min_val, int flag, t_list *last_node);
+
+void	ft_move_back_from_stack_b(t_list **stack_a, t_list **stack_b);
 #endif
