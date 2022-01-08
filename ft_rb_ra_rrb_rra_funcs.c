@@ -19,10 +19,22 @@ void	ft_rra(t_list **stack_a);
 
 void	ft_rb(t_list **stack_b)
 {
-	t_list	*b;
+	t_list	*node;
+	t_list	*last_node;
 
-	b = *stack_b;
-	ft_putstr_fd("\nrb\n", 1);
+	node = *stack_b;
+	if (node == NULL || node->next == NULL)
+		return ;
+	while (node)
+	{
+		if (node->next == NULL)
+			last_node = node;
+		node = node->next;
+	}
+	last_node->next = *stack_b;
+	*stack_b = (*stack_b)->next;
+	last_node->next->next = NULL;
+	ft_putstr_fd("rb\n", 1);
 }
 
 void	ft_rrb(t_list **stack_b)
@@ -30,15 +42,27 @@ void	ft_rrb(t_list **stack_b)
 	t_list	*b;
 
 	b = *stack_b;
-	ft_putstr_fd("\nrrb\n", 1);
+	ft_putstr_fd("rrb\n", 1);
 }
 
 void	ft_ra(t_list **stack_a)
 {
-	t_list	*a;
+	t_list	*node;
+	t_list	*last_node;
 
-	a = *stack_a;
-	ft_putstr_fd("\nra\n", 1);
+	node = *stack_a;
+	if (node == NULL || node->next == NULL)
+		return ;
+	while (node)
+	{
+		if (node->next == NULL)
+			last_node = node;
+		node = node->next;
+	}
+	last_node->next = *stack_a;
+	*stack_a = (*stack_a)->next;
+	last_node->next->next = NULL;
+	ft_putstr_fd("ra\n", 1);
 }
 
 void	ft_rra(t_list **stack_a)
@@ -46,5 +70,5 @@ void	ft_rra(t_list **stack_a)
 	t_list	*a;
 
 	a = *stack_a;
-	ft_putstr_fd("\nrra\n", 1);
+	ft_putstr_fd("rra\n", 1);
 }
