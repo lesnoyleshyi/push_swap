@@ -14,12 +14,22 @@
 
 void	ft_push(t_list **el_owner, t_list *elem, t_list **stack, int top)
 {
+//	ft_putstr_fd("-------\nStack_a before push: \n", 1);
+//	ft_print_list_content(*el_owner);
+//	ft_putstr_fd("Stack_b before push: \n", 1);
+//	ft_print_list_content(*stack);
+//	ft_putstr_fd("-------\n", 1);
 	if (top == 1)
 	{
 		ft_push_head(el_owner, elem, stack);
 	}
 	else
 		ft_push_back(el_owner, elem, stack);
+//	ft_putstr_fd("+++++++\nStack_a after push: \n", 1);
+//	ft_print_list_content(*el_owner);
+//	ft_putstr_fd("Stack_b after push: \n", 1);
+//	ft_print_list_content(*stack);
+//	ft_putstr_fd("+++++++\n", 1);
 }
 
 void	ft_push_head(t_list **elem_owner, t_list *elem, t_list **stack)
@@ -33,9 +43,11 @@ void	ft_push_back(t_list **elem_owner, t_list *elem, t_list **stack)
 {
 	ft_remove_from_stack(elem_owner, elem);
 	elem->next = NULL;
+	if (!(stack == NULL || *stack == NULL))
+		ft_putstr_fd("rb\n", 1);
 	ft_lstadd_back(stack, elem);
-	ft_putstr_fd("rb\n", 1);
 	ft_putstr_fd("pb\n", 1);
+
 }
 
 void	ft_remove_from_stack(t_list **elem_owner, t_list *elem)

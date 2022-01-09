@@ -11,8 +11,8 @@ int main(int argc, char* argv[])
     ft_get_stack_a(&stack_a, argv);
 	ft_index_this_list(stack_a);
 
-	ft_putstr_fd("Initial stack: \n", 1);
-	ft_print_list_content(stack_a);
+//	ft_putstr_fd("Initial stack: \n", 1);
+//	ft_print_list_content(stack_a);
 
 	if (ft_is_cir_sorted(stack_a))
 	{
@@ -22,14 +22,15 @@ int main(int argc, char* argv[])
 		ft_lstclear(&stack_a, free);
 		return (0);
 	}
+
 	ft_presort(&stack_a, &stack_b);
+
+//	ft_putstr_fd("Stack b before transfer to stack_a: \n", 1);
+//	ft_print_list_content(stack_b);
+//	ft_putstr_fd("Stack a before transfer to stack_a: \n", 1);
+//	ft_print_list_content(stack_a);
+
 	ft_little_cir_sort(&stack_a, "sa");
-
-	ft_putstr_fd("Stack b before transfer to stack_a: \n", 1);
-	ft_print_list_content(stack_b);
-	ft_putstr_fd("Stack a before transfer to stack_a: \n", 1);
-	ft_print_list_content(stack_a);
-
 	ft_move_back_from_stack_b(&stack_a, &stack_b);
 	ft_final_sort(&stack_a);
 

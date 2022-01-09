@@ -26,7 +26,7 @@ void	ft_final_sort(t_list **stack)
 		while (ra_count--)
 		{
 			ft_rotate(stack, "ra");
-			ft_putstr_fd("real\n", 1);
+//			ft_putstr_fd("real\n", 1);
 		}
 	}
 	else
@@ -34,7 +34,7 @@ void	ft_final_sort(t_list **stack)
 		while (rra_count--)
 		{
 			ft_rev_rotate(stack, "rra", 1);
-			ft_putstr_fd("real\n", 1);
+//			ft_putstr_fd("real\n", 1);
 		}
 	}
 }

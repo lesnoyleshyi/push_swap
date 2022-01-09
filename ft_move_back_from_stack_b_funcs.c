@@ -27,7 +27,7 @@ void	ft_move_back_from_stack_b(t_list **stack_a, t_list **stack_b)
 		ft_score_stack_b(*stack_b, *stack_a);
 		cheapest_node = ft_get_cheapest_node(*stack_b);
 		ft_cheapest_move(cheapest_node, stack_a, stack_b);
-		ft_putstr_fd("real\n", 1);
+//		ft_putstr_fd("real\n", 1);
 	}
 }
 
