@@ -43,7 +43,6 @@ int	ft_get_min_val(t_list *stack)
 {
 	int		min_val;
 	t_list	*node;
-//	char				*deb;
 
 	if (stack == NULL)
 		exit(EXIT_FAILURE);
@@ -55,12 +54,6 @@ int	ft_get_min_val(t_list *stack)
 			min_val = *(int *)node->content;
 		node = node->next;
 	}
-//
-//	deb = ft_itoa(min_val);
-//	ft_putstr_fd("\nMin value of stack: ", 1);
-//	ft_putstr_fd(deb, 1);
-//	ft_putstr_fd("\n", 1);
-//	free(deb);
 	return (min_val);
 }
 

@@ -16,32 +16,19 @@ t_list	*ft_get_cheapest_node(t_list *stack_b);
 void	ft_cheapest_move(t_list *node_to_move, t_list **dst, t_list **src);
 int	ft_make_choice(int rb, int ra, int rrb, int rra);
 void	ft_choose_move(int choice, t_list *node, t_list **dst, t_list **src);
-int ft_get_rr_rrr_possible_count(int rb, int ra);
+int	ft_get_rr_rrr_possible_count(int rb, int ra);
 
 void	ft_move_back_from_stack_b(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*cheapest_node;
-//	char	*debug;
-//	char	*debug2;
 
 	while (*stack_b)
 	{
 		ft_score_stack_b(*stack_b, *stack_a);
 		cheapest_node = ft_get_cheapest_node(*stack_b);
-
-//		ft_putstr_fd("Value of cheapest node: ", 1);
-//		debug = ft_itoa(*(int *)cheapest_node->content);
-//		ft_putstr_fd(debug, 1);
-//		ft_putstr_fd("\n", 1);
-//		ft_putstr_fd("Score of cheapest node: ", 1);
-//		debug2 = ft_itoa(cheapest_node->cost);
-//		ft_putstr_fd(debug2, 1);
-//		ft_putstr_fd("\n", 1);
-//		free(debug2);
-
 		ft_cheapest_move(cheapest_node, stack_a, stack_b);
+		ft_putstr_fd("real\n", 1);
 	}
-	return ;
 }
 
 t_list	*ft_get_cheapest_node(t_list *stack_b)
@@ -72,7 +59,7 @@ void	ft_cheapest_move(t_list *node_to_move, t_list **dst, t_list **src)
 	int	rb;
 	int	ra;
 	int	rrb;
-	int rra;
+	int	rra;
 	int	choice;
 
 	rb = ft_get_rb_cost(*(int *)node_to_move->content, *src);
@@ -81,16 +68,6 @@ void	ft_cheapest_move(t_list *node_to_move, t_list **dst, t_list **src)
 	rra = ft_get_rra_cost(*(int *)node_to_move->content, *dst);
 	choice = ft_make_choice(rb, ra, rrb, rra);
 	ft_choose_move(choice, node_to_move, dst, src);
-//	if ((rb != 0 && ra != 0) || (rrb != 0 && rra != 0))
-//	{
-//		choice = ft_make_rr_rrr_possible_choice(rb, ra, rrb, rra);
-//		ft_rr_rrr_possible_move(choice, node_to_move, dst, src);
-//	}
-//	else
-//	{
-//		choice = ft_make_simple_choice(rb, ra, rrb, rra);
-//		ft_simple_move(choice, node_to_move, dst, src);
-//	}
 	return ;
 }
 
@@ -138,20 +115,7 @@ void	ft_choose_move(int choice, t_list *node, t_list **dst, t_list **src)
 		ft_move_rrr(node, dst, src);
 }
 
-//int	ft_get_min_rr_rrr_move_cost()
-//{
-//	int	rrr_min_cost;
-//	int	rr_min_cost;
-//
-//	rr_min_cost = ft_get_rr_min_cost(ra, rb);
-//	rrr_min_cost = ft_get_rrr_min_cost(rra, rrb);
-//	if (rr_min_cost <= rrr_min_cost)
-//		return (rr_min_cost);
-//	else
-//		return (rrr_min_cost);
-//}
-
-int ft_get_rr_rrr_possible_count(int rb, int ra)
+int	ft_get_rr_rrr_possible_count(int rb, int ra)
 {
 	int	rr_count;
 

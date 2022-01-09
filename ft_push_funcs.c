@@ -26,6 +26,7 @@ void	ft_push_head(t_list **elem_owner, t_list *elem, t_list **stack)
 {
 	ft_remove_from_stack(elem_owner, elem);
 	ft_lstadd_front(stack, elem);
+	ft_putstr_fd("pb\n", 1);
 }
 
 void	ft_push_back(t_list **elem_owner, t_list *elem, t_list **stack)
@@ -33,6 +34,8 @@ void	ft_push_back(t_list **elem_owner, t_list *elem, t_list **stack)
 	ft_remove_from_stack(elem_owner, elem);
 	elem->next = NULL;
 	ft_lstadd_back(stack, elem);
+	ft_putstr_fd("rb\n", 1);
+	ft_putstr_fd("pb\n", 1);
 }
 
 void	ft_remove_from_stack(t_list **elem_owner, t_list *elem)

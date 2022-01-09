@@ -34,8 +34,8 @@ int main(int argc, char* argv[])
 	ft_final_sort(&stack_a);
 
 //	ft_print_list_content(stack_b);
-	ft_putstr_fd("Stack before exit: \n", 1);
-	ft_print_list_content(stack_a);
+//	ft_putstr_fd("Stack before exit: \n", 1);
+//	ft_print_list_content(stack_a);
 
 	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);

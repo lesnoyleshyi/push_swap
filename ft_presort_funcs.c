@@ -23,10 +23,10 @@ void	ft_presort(t_list **stack_a, t_list **stack_b)
 	while (cur_st_a_node)
 	{
 		next_node = cur_st_a_node->next;
-		if (cur_st_a_node->score != 0 && cur_st_a_node->score != list_len - 1
-			&& cur_st_a_node->score != list_len / 2)
+		if ((cur_st_a_node->score != 0) && (cur_st_a_node->score != list_len - 1)
+			&& (cur_st_a_node->score != list_len / 2))
 		{
-			if (cur_st_a_node->score < list_len / 2)
+			if ((cur_st_a_node->score) <= (list_len / 2))
 			{
 				ft_push(stack_a, cur_st_a_node, stack_b, 1);
 				cur_st_a_node = next_node;
