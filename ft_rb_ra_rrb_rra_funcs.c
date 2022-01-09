@@ -12,63 +12,99 @@
 
 #include "push_swap.h"
 
-void	ft_rb(t_list **stack_b);
-void	ft_rrb(t_list **stack_b);
-void	ft_ra(t_list **stack_a);
-void	ft_rra(t_list **stack_a);
-
-void	ft_rb(t_list **stack_b)
+void	ft_rotate(t_list **stack, char *rb_or_ra)
 {
 	t_list	*node;
 	t_list	*last_node;
 
-	node = *stack_b;
-	if (node == NULL || node->next == NULL)
+	if (stack == NULL || *stack == NULL)
 		return ;
+	node = *stack;
 	while (node)
 	{
 		if (node->next == NULL)
 			last_node = node;
 		node = node->next;
 	}
-	last_node->next = *stack_b;
-	*stack_b = (*stack_b)->next;
+	last_node->next = *stack;
+	*stack = (*stack)->next;
 	last_node->next->next = NULL;
-	ft_putstr_fd("rb\n", 1);
+	if (rb_or_ra)
+	{
+		ft_putstr_fd(rb_or_ra, 1);
+		ft_putstr_fd("\n", 1);
+	}
 }
 
-void	ft_rrb(t_list **stack_b)
-{
-	t_list	*b;
-
-	b = *stack_b;
-	ft_putstr_fd("rrb\n", 1);
-}
-
-void	ft_ra(t_list **stack_a)
+void	ft_rev_rotate(t_list **stack, char *rrb_or_rra, int b_a_switch_rrr)
 {
 	t_list	*node;
-	t_list	*last_node;
 
-	node = *stack_a;
-	if (node == NULL || node->next == NULL)
+	if (stack == NULL || *stack == NULL)
 		return ;
-	while (node)
+	node = *stack;
+	if (node->next == NULL)
 	{
-		if (node->next == NULL)
-			last_node = node;
+		ft_sb_sa_switch(stack, rrb_or_rra, b_a_switch_rrr);
+		return ;
+	}
+	while (node && node->next)
+	{
+		if (node->next->next == NULL)
+		{
+			node->next->next = *stack;
+			*stack = node->next;
+			node->next = NULL;
+		}
 		node = node->next;
 	}
-	last_node->next = *stack_a;
-	*stack_a = (*stack_a)->next;
-	last_node->next->next = NULL;
-	ft_putstr_fd("ra\n", 1);
+	if (rrb_or_rra)
+	{
+		ft_putstr_fd(rrb_or_rra, 1);
+		ft_putstr_fd("\n", 1);
+	}
 }
 
-void	ft_rra(t_list **stack_a)
+void	ft_swap(t_list **stack, char *sa_or_sb)
 {
-	t_list	*a;
+	t_list	*first_node;
+	t_list	*second_node;
 
-	a = *stack_a;
-	ft_putstr_fd("rra\n", 1);
+	first_node = *stack;
+	second_node = (*stack)->next;
+	first_node->next = second_node->next;
+	second_node->next = first_node;
+	*stack = second_node;
+	ft_putstr_fd(sa_or_sb, 1);
+	ft_putstr_fd("\n", 1);
+}
+
+void	ft_sb_sa_switch(t_list **stack, char *rrb_or_rra, int b_a_switch_rrr)
+{
+	if (rrb_or_rra == NULL)
+	{
+		if (b_a_switch_rrr == 0)
+			ft_swap(stack, "sb");
+		else
+			ft_swap(stack, "sa");
+		return ;
+	}
+	if (ft_strncmp(rrb_or_rra, "rrb", 4) == 0)
+		ft_swap(stack, "sb");
+	else
+		ft_swap(stack, "sa");
+}
+
+void	ft_pa(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*top_b_node;
+
+	if (stack_b == NULL || *stack_b == NULL)
+		return ;
+	top_b_node = *stack_b;
+	*stack_b = top_b_node->next;
+	top_b_node->next = *stack_a;
+	*stack_a = top_b_node;
+	ft_putstr_fd("pa", 1);
+	ft_putstr_fd("\n", 1);
 }

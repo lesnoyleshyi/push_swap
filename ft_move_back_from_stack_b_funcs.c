@@ -20,32 +20,26 @@ int ft_get_rr_rrr_possible_count(int rb, int ra);
 
 void	ft_move_back_from_stack_b(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*a;
-	t_list	*b;
 	t_list	*cheapest_node;
-	char	*debug;
-	char	*debug2;
+//	char	*debug;
+//	char	*debug2;
 
-	a = *stack_a;
-	b = *stack_b;
-	while (b)
+	while (*stack_b)
 	{
 		ft_score_stack_b(*stack_b, *stack_a);
 		cheapest_node = ft_get_cheapest_node(*stack_b);
 
-		ft_putstr_fd("Value of cheapest node: ", 1);
-		debug = ft_itoa(*(int *)cheapest_node->content);
-		ft_putstr_fd(debug, 1);
-		ft_putstr_fd("\n", 1);
-		ft_putstr_fd("Score of cheapest node: ", 1);
-		debug2 = ft_itoa(cheapest_node->cost);
-		ft_putstr_fd(debug2, 1);
-		ft_putstr_fd("\n", 1);
-		free(debug2);
+//		ft_putstr_fd("Value of cheapest node: ", 1);
+//		debug = ft_itoa(*(int *)cheapest_node->content);
+//		ft_putstr_fd(debug, 1);
+//		ft_putstr_fd("\n", 1);
+//		ft_putstr_fd("Score of cheapest node: ", 1);
+//		debug2 = ft_itoa(cheapest_node->cost);
+//		ft_putstr_fd(debug2, 1);
+//		ft_putstr_fd("\n", 1);
+//		free(debug2);
 
 		ft_cheapest_move(cheapest_node, stack_a, stack_b);
-
-		b = b->next;
 	}
 	return ;
 }

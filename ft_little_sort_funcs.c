@@ -12,18 +12,18 @@
 
 #include "push_swap.h"
 
-void	ft_little_cir_sort(t_list **stack)
+void	ft_little_cir_sort(t_list **stack, char *sa_or_sb)
 {
 	int	stack_len;
 
 	stack_len = ft_lstsize(*stack);
 	if (stack_len == 2)
-		ft_sort_two(stack);
+		ft_sort_two(stack, sa_or_sb);
 	else
-		ft_cir_sort_three(stack);
+		ft_cir_sort_three(stack, sa_or_sb);
 }
 
-void	ft_sort_two(t_list **stack)
+void	ft_sort_two(t_list **stack, char *sa_or_sb)
 {
 	t_list	*first_node;
 	t_list	*second_node;
@@ -31,14 +31,10 @@ void	ft_sort_two(t_list **stack)
 	first_node = *stack;
 	second_node = (*stack)->next;
 	if (*(int *)second_node->content < *(int *)first_node->content)
-	{
-		*stack = second_node;
-		(*stack)->next = first_node;
-		(*stack)->next->next = NULL;
-	}
+		ft_swap(stack, sa_or_sb);
 }
 
-void	ft_cir_sort_three(t_list **stack)
+void	ft_cir_sort_three(t_list **stack, char *sa_or_sb)
 {
 	int		v1;
 	int		v2;
@@ -51,17 +47,5 @@ void	ft_cir_sort_three(t_list **stack)
 			|| ((v1 < v2) && (v2 > v3) && (v3 > v1))
 			|| ((v1 > v2) && (v2 < v3) && (v3 > v1))))
 		return ;
-	ft_swap_top(stack);
-}
-
-void	ft_swap_top(t_list **stack)
-{
-	t_list	*first_node;
-	t_list	*second_node;
-
-	first_node = *stack;
-	second_node = (*stack)->next;
-	first_node->next = second_node->next;
-	second_node->next = first_node;
-	*stack = second_node;
+	ft_swap(stack, sa_or_sb);
 }

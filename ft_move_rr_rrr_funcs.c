@@ -22,7 +22,7 @@ void	ft_move_rr(t_list *node, t_list **dst, t_list **src)
 	int	rr_count;
 
 	rb_count = ft_get_rb_cost(*(int *)node->content, *src);
-	ra_count = ft_get_ra_cost(*(int *)node->content, *src);
+	ra_count = ft_get_ra_cost(*(int *)node->content, *dst);
 	rr_count = ft_get_rr_rrr_possible_count(rb_count, ra_count);
 	while (rr_count--)
 	{
@@ -31,9 +31,9 @@ void	ft_move_rr(t_list *node, t_list **dst, t_list **src)
 		ra_count--;
 	}
 	while (rb_count--)
-		ft_rb(src);
+		ft_rotate(src, "rb");
 	while (ra_count--)
-		ft_ra(dst);
+		ft_rotate(dst, "ra");
 	ft_pa(dst, src);
 }
 
@@ -44,7 +44,7 @@ void	ft_move_rrr(t_list *node, t_list **dst, t_list **src)
 	int	rrr_count;
 
 	rrb_count = ft_get_rrb_cost(*(int *)node->content, *src);
-	rra_count = ft_get_rra_cost(*(int *)node->content, *src);
+	rra_count = ft_get_rra_cost(*(int *)node->content, *dst);
 	rrr_count = ft_get_rr_rrr_possible_count(rrb_count, rra_count);
 	while (rrr_count--)
 	{
@@ -53,8 +53,8 @@ void	ft_move_rrr(t_list *node, t_list **dst, t_list **src)
 		rra_count--;
 	}
 	while (rrb_count--)
-		ft_rrb(src);
+		ft_rev_rotate(src, "rrb", 0);
 	while (rra_count--)
-		ft_rra(dst);
+		ft_rev_rotate(dst, "rra", 1);
 	ft_pa(dst, src);
 }

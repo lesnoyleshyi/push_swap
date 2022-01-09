@@ -33,16 +33,14 @@ int	ft_get_ra_cost(int el_value, t_list *stack_a);
 int	ft_get_rra_cost(int el_value, t_list *stack_a);
 int	ft_get_appropriate_num(t_list *stack, int val);
 
-void	ft_little_cir_sort(t_list **stack);
-void	ft_cir_sort_three(t_list **stack);
-void	ft_sort_two(t_list **stack);
-void	ft_swap_top(t_list **stack);
+void	ft_little_cir_sort(t_list **stack, char *sa_or_sb);
+void	ft_cir_sort_three(t_list **stack, char *sa_or_sb);
+void	ft_sort_two(t_list **stack, char *sa_or_sb);
 
 int	ft_is_cir_sorted(t_list *stack);
 int	ft_get_min_val(t_list *stack);
 void	ft_n1(int *p_flg, t_list **p_lnode, t_list **p_node, t_list *stack);
 int	ft_n2(int next_val, int min_val, int flag, t_list *last_node);
-
 
 
 void	ft_move_back_from_stack_b(t_list **stack_a, t_list **stack_b);
@@ -61,14 +59,13 @@ void	ft_move_rrb_rra(t_list *node, t_list **dst, t_list **src);
 void	ft_move_rr(t_list *node, t_list **dst, t_list **src);
 void	ft_move_rrr(t_list *node, t_list **dst, t_list **src);
 
-void	ft_rb(t_list **stack_b);
-void	ft_rrb(t_list **stack_b);
-void	ft_ra(t_list **stack_a);
-void	ft_rra(t_list **stack_a);
+void	ft_rotate(t_list **stack, char *rb_or_ra);
+void	ft_rev_rotate(t_list **stack, char *rrb_or_rra, int b_a_switch_rrr);
+void	ft_swap(t_list **stack, char *sa_or_sb);
+void	ft_sb_sa_switch(t_list **stack, char *rrb_or_rra, int b_a_switch_rrr);
+void	ft_pa(t_list **stack_a, t_list **stack_b);
 
 void	ft_rr(t_list **stack_a, t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
-void	ft_pa(t_list **stack_a, t_list **stack_b);
-void	ft_pb(t_list **stack_a, t_list **stack_b);
 
 #endif
