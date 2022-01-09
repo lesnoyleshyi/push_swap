@@ -24,7 +24,7 @@ void	ft_score_stack_b(t_list *stack_b, t_list *stack_a)
 	while (node)
 	{
 		min_node_cost = ft_get_min_cost(node, stack_b, stack_a);
-		node->cost = min_node_cost;
+		node->score = min_node_cost;
 		node = node->next;
 		if (min_node_cost < least_score)
 			least_score = min_node_cost;

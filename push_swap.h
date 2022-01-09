@@ -68,4 +68,6 @@ void	ft_pa(t_list **stack_a, t_list **stack_b);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 
+void	ft_final_sort(t_list **stack);
+
 #endif

@@ -53,14 +53,14 @@ t_list	*ft_get_cheapest_node(t_list *stack_b)
 	cur_node = stack_b;
 	if (cur_node == NULL)
 		return (NULL);
-	min_cost = cur_node->cost;
+	min_cost = cur_node->score;
 	cheapest_node = cur_node;
 	while (cur_node)
 	{
-		if (cur_node->cost < min_cost)
+		if (cur_node->score < min_cost)
 		{
 			cheapest_node = cur_node;
-			min_cost = cur_node->cost;
+			min_cost = cur_node->score;
 		}
 		cur_node = cur_node->next;
 	}

@@ -44,7 +44,7 @@ void    ft_is_num_already_in_list(int number, t_list **lst)
 	while (p_node != NULL)
     {
 		if (p_node->content && *((int *)(p_node->content)) == number)
-            ft_perror_and_exit("Error\nFound duplicated number");
+            ft_perror_and_exit("Error\nFound duplicated number\n");
 		p_node = p_node->next;
     }
 }
@@ -67,9 +67,9 @@ int ft_long_atoi(const char *str)
     {
         res = (res * 10 + (*str++ - '0'));
         if (minus_status == 1 && res > 2147483647)
-            ft_perror_and_exit("Error\nNumber can't exceed int range");
+            ft_perror_and_exit("Error\nNumber can't exceed int range\n");
         if (minus_status == -1 && res > 2147483648)
-            ft_perror_and_exit("Error\nNumber can't exceed int range");
+            ft_perror_and_exit("Error\nNumber can't exceed int range\n");
     }
     return ((int)(res * minus_status));
 }
@@ -80,8 +80,8 @@ void    ft_valid_number(const char *str)
 
     i = 0;
     if (!((str[i] == '+') || (str[i] == '-') || ft_isdigit(str[i])))
-        ft_perror_and_exit("Error\nInvalid argument - not a number");
+        ft_perror_and_exit("Error\nInvalid argument - not a number\n");
     while (str[++i])
         if (!(ft_isdigit(str[i])))
-            ft_perror_and_exit("Error\nInvalid argument - not a number");
+            ft_perror_and_exit("Error\nInvalid argument - not a number\n");
 }
