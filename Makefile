@@ -61,6 +61,9 @@ run_three	:	${NAME}
 run_four	:	${NAME}
 				./push_swap 10 15 20 5
 
+run_five	:	${NAME}
+				./push_swap 1 5 2 4 3
+
 run_word	:	${NAME}
 				./push_swap 5 20 hello 15 10
 

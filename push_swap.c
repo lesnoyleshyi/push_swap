@@ -16,9 +16,9 @@ int main(int argc, char* argv[])
 
 	if (ft_is_cir_sorted(stack_a))
 	{
-		ft_putstr_fd("Cir_sorted\n", 1);
+//		ft_putstr_fd("Cir_sorted\n", 1);
 		ft_final_sort(&stack_a);
-		ft_print_list_content(stack_a);
+//		ft_print_list_content(stack_a);
 		ft_lstclear(&stack_a, free);
 		return (0);
 	}
@@ -29,8 +29,11 @@ int main(int argc, char* argv[])
 //	ft_print_list_content(stack_b);
 //	ft_putstr_fd("Stack a before transfer to stack_a: \n", 1);
 //	ft_print_list_content(stack_a);
-
-	ft_little_cir_sort(&stack_a, "sa");
+	if (argc != 6)
+	{
+		ft_putstr_fd("if condition for 5 elements works\n", 1);
+		ft_little_cir_sort(&stack_a, "sa");
+	}
 	ft_move_back_from_stack_b(&stack_a, &stack_b);
 	ft_final_sort(&stack_a);
 
