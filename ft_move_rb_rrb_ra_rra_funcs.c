@@ -28,7 +28,7 @@ void	ft_move_rb_ra(t_list *node, t_list **dst, t_list **src)
 		ft_rotate(src, "rb");
 	while (ra_count--)
 		ft_rotate(dst, "ra");
-	ft_push2(dst, src, "pa");
+	ft_push(dst, src, "pa");
 }
 
 void	ft_move_rrb_ra(t_list *node, t_list **dst, t_list **src)
@@ -42,7 +42,7 @@ void	ft_move_rrb_ra(t_list *node, t_list **dst, t_list **src)
 		ft_rev_rotate(src, "rrb", 0);
 	while (ra_count--)
 		ft_rotate(dst, "ra");
-	ft_push2(dst, src, "pa");
+	ft_push(dst, src, "pa");
 }
 
 void	ft_move_rb_rra(t_list *node, t_list **dst, t_list **src)
@@ -56,7 +56,7 @@ void	ft_move_rb_rra(t_list *node, t_list **dst, t_list **src)
 		ft_rotate(src, "rb");
 	while (rra_count--)
 		ft_rev_rotate(dst, "rra", 1);
-	ft_push2(dst, src, "pa");
+	ft_push(dst, src, "pa");
 }
 
 void	ft_move_rrb_rra(t_list *node, t_list **dst, t_list **src)
@@ -70,5 +70,5 @@ void	ft_move_rrb_rra(t_list *node, t_list **dst, t_list **src)
 		ft_rev_rotate(src, "rrb", 0);
 	while (rra_count--)
 		ft_rev_rotate(dst, "rra", 1);
-	ft_push2(dst, src, "pa");
+	ft_push(dst, src, "pa");
 }

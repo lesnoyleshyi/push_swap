@@ -76,8 +76,6 @@ void	ft_swap(t_list **stack, char *sa_or_sb)
 	second_node->next = first_node;
 	*stack = second_node;
 	ft_putstr_fd(sa_or_sb, 1);
-	if (sa_or_sb)
-		return ;
 	ft_putstr_fd("\n", 1);
 }
 

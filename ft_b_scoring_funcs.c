@@ -18,17 +18,24 @@ void	ft_score_stack_b(t_list *stack_b, t_list *stack_a)
 	int		min_node_cost;
 	int		least_score;
 //	char	*deb;
+//	char	*deb2;
 
 	least_score = 100;
 	node = stack_b;
 	while (node)
 	{
 		min_node_cost = ft_get_min_cost(node, stack_b, stack_a);
+//		deb2 = ft_itoa(min_node_cost);
+//		ft_putstr_fd("cost: ", 1);
+//		ft_putstr_fd(deb2, 1);
+//		ft_putstr_fd("\t", 1);
 		node->score = min_node_cost;
 		node = node->next;
 		if (min_node_cost < least_score)
 			least_score = min_node_cost;
 	}
+//	ft_print_list_content(stack_a);
+//	ft_print_list_content(stack_b);
 //	deb = ft_itoa(least_score);
 //	ft_putstr_fd("\nLeast score is ", 1);
 //	ft_putstr_fd(deb, 1);
@@ -150,9 +157,22 @@ int	ft_get_ra_cost(int el_value, t_list *stack_a)
 	int		pos;
 	t_list	*node;
 
+//	char	*deb_el_value;
+//	char	*deb_appr_num;
+//
+//	ft_putstr_fd("ft_get_ra_cost\nel_value:\tappr_num:\n", 1);
+//	deb_el_value = ft_itoa(el_value);
+//	ft_putstr_fd(deb_el_value, 1);
+//	ft_putstr_fd("\t\t\t", 1);
+
 	appr_num = ft_get_appropriate_num(stack_a, el_value);
 	node = stack_a;
 	pos = 0;
+
+//	deb_appr_num = ft_itoa(appr_num);
+//	ft_putstr_fd(deb_appr_num, 1);
+//	ft_putstr_fd("\n", 1);
+
 	while (node)
 	{
 		if (*(int *)node->content == appr_num)
@@ -170,7 +190,20 @@ int	ft_get_rra_cost(int el_value, t_list *stack_a)
 	int		list_len;
 	int		pos;
 
+//	char	*deb_el_value;
+//	char	*deb_appr_num;
+//
+//	ft_putstr_fd("ft_get_rra_cost\nel_value:\tappr_num:\n", 1);
+//	deb_el_value = ft_itoa(el_value);
+//	ft_putstr_fd(deb_el_value, 1);
+//	ft_putstr_fd("\t\t\t", 1);
+
 	appr_num = ft_get_appropriate_num(stack_a, el_value);
+
+//	deb_appr_num = ft_itoa(appr_num);
+//	ft_putstr_fd(deb_appr_num, 1);
+//	ft_putstr_fd("\n", 1);
+
 	list_len = ft_lstsize(stack_a);
 	pos = 0;
 	node = stack_a;
