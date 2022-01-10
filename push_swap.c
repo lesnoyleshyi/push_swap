@@ -23,16 +23,16 @@ int main(int argc, char* argv[])
 		return (0);
 	}
 
-	ft_presort(&stack_a, &stack_b);
+	ft_presort2(&stack_a, &stack_b);
 
 //	ft_putstr_fd("Stack b before transfer to stack_a: \n", 1);
 //	ft_print_list_content(stack_b);
 //	ft_putstr_fd("Stack a before transfer to stack_a: \n", 1);
 //	ft_print_list_content(stack_a);
 
-	ft_little_cir_sort(&stack_a, "sa");
-	ft_move_back_from_stack_b(&stack_a, &stack_b);
-	ft_final_sort(&stack_a);
+//	ft_little_cir_sort(&stack_a, "sa");
+//	ft_move_back_from_stack_b(&stack_a, &stack_b);
+//	ft_final_sort(&stack_a);
 
 //	ft_print_list_content(stack_b);
 //	ft_putstr_fd("Stack before exit: \n", 1);

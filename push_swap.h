@@ -24,6 +24,7 @@ void	ft_remove_from_stack(t_list **elem_owner, t_list *elem);
 void	ft_remove_from_top(t_list **list);
 
 void	ft_presort(t_list **stack_a, t_list **stack_b);
+void	ft_presort2(t_list **stack_a, t_list **stack_b);
 
 void	ft_score_stack_b(t_list *stack_b, t_list *stack_a);
 int	ft_get_min_cost(t_list *elem, t_list *stack_b, t_list *stack_a);
@@ -64,6 +65,7 @@ void	ft_rev_rotate(t_list **stack, char *rrb_or_rra, int b_a_switch_rrr);
 void	ft_swap(t_list **stack, char *sa_or_sb);
 void	ft_sb_sa_switch(t_list **stack, char *rrb_or_rra, int b_a_switch_rrr);
 void	ft_pa(t_list **stack_a, t_list **stack_b);
+void	ft_push2(t_list **dst, t_list **src, char *pb_or_pa);
 
 void	ft_rr(t_list **stack_a, t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);

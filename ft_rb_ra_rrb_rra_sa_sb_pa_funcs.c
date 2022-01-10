@@ -31,8 +31,8 @@ void	ft_rotate(t_list **stack, char *rb_or_ra)
 	last_node->next->next = NULL;
 	if (rb_or_ra)
 	{
-//		ft_putstr_fd(rb_or_ra, 1);
-//		ft_putstr_fd("\n", 1);
+		ft_putstr_fd(rb_or_ra, 1);
+		ft_putstr_fd("\n", 1);
 	}
 }
 
@@ -60,8 +60,8 @@ void	ft_rev_rotate(t_list **stack, char *rrb_or_rra, int b_a_switch_rrr)
 	}
 	if (rrb_or_rra)
 	{
-//		ft_putstr_fd(rrb_or_rra, 1);
-//		ft_putstr_fd("\n", 1);
+		ft_putstr_fd(rrb_or_rra, 1);
+		ft_putstr_fd("\n", 1);
 	}
 }
 
@@ -75,10 +75,10 @@ void	ft_swap(t_list **stack, char *sa_or_sb)
 	first_node->next = second_node->next;
 	second_node->next = first_node;
 	*stack = second_node;
-//	ft_putstr_fd(sa_or_sb, 1);
+	ft_putstr_fd(sa_or_sb, 1);
 	if (sa_or_sb)
 		return ;
-//	ft_putstr_fd("\n", 1);
+	ft_putstr_fd("\n", 1);
 }
 
 void	ft_sb_sa_switch(t_list **stack, char *rrb_or_rra, int b_a_switch_rrr)
@@ -95,18 +95,4 @@ void	ft_sb_sa_switch(t_list **stack, char *rrb_or_rra, int b_a_switch_rrr)
 		ft_swap(stack, "sb");
 	else
 		ft_swap(stack, "sa");
-}
-
-void	ft_pa(t_list **stack_a, t_list **stack_b)
-{
-	t_list	*top_b_node;
-
-	if (stack_b == NULL || *stack_b == NULL)
-		return ;
-	top_b_node = *stack_b;
-	*stack_b = top_b_node->next;
-	top_b_node->next = *stack_a;
-	*stack_a = top_b_node;
-//	ft_putstr_fd("pa", 1);
-//	ft_putstr_fd("\n", 1);
 }

@@ -34,7 +34,7 @@ void	ft_move_rr(t_list *node, t_list **dst, t_list **src)
 		ft_rotate(src, "rb");
 	while (ra_count--)
 		ft_rotate(dst, "ra");
-	ft_pa(dst, src);
+	ft_push2(dst, src, "pa");
 }
 
 void	ft_move_rrr(t_list *node, t_list **dst, t_list **src)
@@ -56,5 +56,5 @@ void	ft_move_rrr(t_list *node, t_list **dst, t_list **src)
 		ft_rev_rotate(src, "rrb", 0);
 	while (rra_count--)
 		ft_rev_rotate(dst, "rra", 1);
-	ft_pa(dst, src);
+	ft_push2(dst, src, "pa");
 }
