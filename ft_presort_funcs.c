@@ -33,7 +33,7 @@ void	ft_presort(t_list **stack_a, t_list **stack_b)
 		else
 		{
 			ft_push(stack_b, stack_a, "pb");
-			if (ft_lstsize(*stack_b) > 1)
+			if (ft_lstsize(*stack_b) > 2)
 				ft_rotate(stack_b, "rb");
 		}
 		cur_len = ft_lstsize(*stack_a);
