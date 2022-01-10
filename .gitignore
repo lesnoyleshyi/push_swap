@@ -1,3 +1,7 @@
 push_swap
 a.out
 *.o
+/.idea
+checker_Mac
+debug.txt
+pyviz.py
