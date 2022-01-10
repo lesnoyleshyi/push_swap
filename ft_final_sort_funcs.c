@@ -22,19 +22,9 @@ void	ft_final_sort(t_list **stack)
 	ra_count = ft_get_rb_cost(min_val, *stack);
 	rra_count = ft_get_rrb_cost(min_val, *stack);
 	if (ra_count <= rra_count)
-	{
 		while (ra_count--)
-		{
 			ft_rotate(stack, "ra");
-//			ft_putstr_fd("real\n", 1);
-		}
-	}
 	else
-	{
 		while (rra_count--)
-		{
 			ft_rev_rotate(stack, "rra", 1);
-//			ft_putstr_fd("real\n", 1);
-		}
-	}
 }

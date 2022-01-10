@@ -34,15 +34,6 @@ t_list	*ft_bubble_sort_ll(t_list *unsorted_list)
 	return (sorted_list);
 }
 
-void	ft_swap_nodes_content(t_list *cur_node, t_list *next_node)
-{
-	int	dummy;
-
-	dummy = *(int *)cur_node->content;
-	*(int *)cur_node->content = *(int *)next_node->content;
-	*(int *)next_node->content = dummy;
-}
-
 t_list	*ft_dup_list(t_list *unsorted_list)
 {
 	t_list	*orig_node;
@@ -61,4 +52,13 @@ t_list	*ft_dup_list(t_list *unsorted_list)
 		orig_node = orig_node->next;
 	}
 	return (sorted_list);
+}
+
+void	ft_swap_nodes_content(t_list *cur_node, t_list *next_node)
+{
+	int	dummy;
+
+	dummy = *(int *)cur_node->content;
+	*(int *)cur_node->content = *(int *)next_node->content;
+	*(int *)next_node->content = dummy;
 }

@@ -28,3 +28,17 @@ void	ft_rrr(t_list **stack_a, t_list **stack_b)
 	ft_rev_rotate(stack_a, NULL, 1);
 	ft_putstr_fd("rrr\n", 1);
 }
+
+int	ft_get_rr_rrr_possible_count(int rb, int ra)
+{
+	int	rr_count;
+
+	rr_count = 0;
+	while (ra > 0 && rb > 0)
+	{
+		rr_count++;
+		ra--;
+		rb--;
+	}
+	return (rr_count);
+}

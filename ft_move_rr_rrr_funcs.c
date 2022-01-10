@@ -12,9 +12,6 @@
 
 #include "push_swap.h"
 
-void	ft_move_rr(t_list *node, t_list **dst, t_list **src);
-void	ft_move_rrr(t_list *node, t_list **dst, t_list **src);
-
 void	ft_move_rr(t_list *node, t_list **dst, t_list **src)
 {
 	int	rb_count;

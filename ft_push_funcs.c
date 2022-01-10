@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_push(t_list **dst, t_list **src, char* pb_or_pa)
+void	ft_push(t_list **dst, t_list **src, char *pb_or_pa)
 {
 	t_list	*top_src_node;
 
