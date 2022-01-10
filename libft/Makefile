@@ -21,9 +21,9 @@ OBJS	=	$(SRCS:.c=.o)
 FLAGS	:=	-Wall -Werror -Wextra
 
 %.o		:	%.c libft.h
-			gcc $(FLAGS) -g -c $< -o $@
+			gcc $(FLAGS) -c $< -o $@
 
-${NAME}	: 	$(OBJS)
+${NAME}	: 	$(OBJS) $(BONUSES:.c=.o)
 			ar rcs $(NAME) $?
 
 .PHONY	:	all clean fclean re
@@ -38,5 +38,5 @@ fclean	:	clean
 
 re		:	fclean all
 
-bonus	:	all ${BONUSES:.c=.o}
-			ar rcs ${NAME} ${BONUSES:.c=.o}
+bonus	:
+			echo "redundant for this project"
