@@ -13,18 +13,14 @@ SRCS	=	push_swap.c	ft_get_stack_a_from_input_funcs.c	ft_sort_funcs.c \
 			ft_move_rr_rrr_funcs.c	ft_rr_rrr_funcs.c	ft_final_sort_funcs.c \
 			ft_get_rb_ra_rrb_rra_cost_funcs.c
 
-SRC_PATH =	./srcs
-
-OBJ_PATH =	./objs
-
-OBJS	=	$(patsubst %.c,${OBJ_PATH}/%.o,${SRCS})
+OBJS	=	${SRCS:.c=.o}
 
 CC		=	gcc
 
 CFLAGS	=	-Wall -Werror -Wextra
 
-%.o	:	$(patsubst %.o,%.c,$(notdir $@))	${HEADER}
-	${CC} ${CFLAGS} $(patsubst %.o,%.c,$(notdir $@)) -c -o $(addprefix ./,$@)
+%.o			:	%.c ${HEADER}
+				${CC} ${CFLAGS} $< -c -o $@
 
 .PHONY		:	all re clean fclean debug run libft
 
@@ -81,4 +77,7 @@ all			:	${NAME} bonus
 re			:	fclean ${NAME}
 
 test		:
+				$(patsubst %.o,%.c,$(notdir ./objs/push_swap.o))
+
+test2		:
 				$(OBJS)
