@@ -31,6 +31,7 @@ void	ft_index_this_list(t_list *list_to_index);
 void	ft_write_to_score_field(t_list *list_to_index, t_list *sorted_list);
 
 void	ft_presort(t_list **stack_a, t_list **stack_b);
+void	ft_choose_rotate(t_list **stack_a, int min, int med, int max);
 
 void	ft_score_stack_b(t_list *stack_b, t_list *stack_a);
 int		ft_get_rb_cost(int el_value, t_list *stack_b);
