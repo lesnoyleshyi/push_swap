@@ -47,11 +47,11 @@ checker		:	${OBJS} ${CH_OBJS} ${LIBFT}
 				${CC} ${CFLAGS} ${COMMON_OBJS} ${CH_OBJS} -L./libft -lft -o checker
 
 clean		:
-				rm -rf ${OBJS}
+				rm -rf ${COMMON_OBJS} ${CH_OBJS} $(addsuffix .o,${NAME})
 				${MAKE} -C ./libft clean
 
 fclean		:
-				rm -rf ${OBJS} ${NAME} bonus
+				rm -rf ${COMMON_OBJS} ${CH_OBJS} $(addsuffix .o,${NAME}) ${NAME} checker
 				${MAKE} -C ./libft fclean
 
 debug		:
@@ -104,7 +104,7 @@ run_many	:	${NAME}
 				44 36 4 89 14 42 20 57 96 34 82 58 76 10 23 97 63 85 37 77 \
 				9 73 51 39 33 7 6 59 86 35 27 41 53 38 8 31 60 72 94 64 3
 
-all			:	${NAME}
+all			:	${NAME} checker
 
 re			:	fclean ${NAME}
 
