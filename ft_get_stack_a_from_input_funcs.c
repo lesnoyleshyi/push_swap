@@ -85,3 +85,9 @@ void	ft_valid_number(const char *str)
 		if (!(ft_isdigit(str[i])))
 			ft_perror_and_exit("Error\nInvalid argument - not a number\n");
 }
+
+void	ft_perror_and_exit(const char *message)
+{
+	ft_putstr_fd(message, 2);
+	exit(EXIT_FAILURE);
+}
