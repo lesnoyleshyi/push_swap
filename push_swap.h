@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+# include "./checker_srcs/get_next_line.h"
 
 void	ft_is_num_already_in_list(int number, t_list **lst);
 void	ft_get_stack_a(t_list **head, char *argv[]);
@@ -72,5 +73,10 @@ void	ft_rr(t_list **stack_a, t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 
 void	ft_final_sort(t_list **stack);
+
+void	ft_check_instruction(t_list **stack_b, t_list **stack_a, char *instr);
+void	ft_apply_instruction(t_list **stack_b, t_list **stack_a, char *instr);
+void	ft_apply_double_instruction(t_list **st_b, t_list **st_a, char *instr);
+int		ft_is_sorted(t_list *stack);
 
 #endif

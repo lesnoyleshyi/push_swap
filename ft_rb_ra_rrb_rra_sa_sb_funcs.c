@@ -65,18 +65,23 @@ void	ft_rev_rotate(t_list **stack, char *rrb_or_rra, int b_a_switch_rrr)
 	}
 }
 
-void	ft_swap(t_list **stack, char *sa_or_sb)
+void	ft_swap(t_list **stack, char *sb_or_sa)
 {
 	t_list	*first_node;
 	t_list	*second_node;
 
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		return ;
 	first_node = *stack;
 	second_node = (*stack)->next;
 	first_node->next = second_node->next;
 	second_node->next = first_node;
 	*stack = second_node;
-	ft_putstr_fd(sa_or_sb, 1);
-	ft_putstr_fd("\n", 1);
+	if (sb_or_sa)
+	{
+		ft_putstr_fd(sb_or_sa, 1);
+		ft_putstr_fd("\n", 1);
+	}
 }
 
 void	ft_sb_sa_switch(t_list **stack, char *rrb_or_rra, int b_a_switch_rrr)

@@ -33,7 +33,7 @@ CFLAGS	=	-Wall -Werror -Wextra
 %.o			:	%.c ${HEADER}
 				${CC} ${CFLAGS} $< -c -o $@
 
-.PHONY		:	all re clean fclean debug run libft checker
+.PHONY		:	all re clean fclean debug run libft
 
 ${NAME}		:	${OBJS} ${LIBFT}
 				${CC} ${CFLAGS} ${OBJS} -L./libft -lft -o ${NAME}

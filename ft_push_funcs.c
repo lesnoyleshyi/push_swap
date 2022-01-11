@@ -22,6 +22,9 @@ void	ft_push(t_list **dst, t_list **src, char *pb_or_pa)
 	*src = top_src_node->next;
 	top_src_node->next = *dst;
 	*dst = top_src_node;
-	ft_putstr_fd(pb_or_pa, 1);
-	ft_putstr_fd("\n", 1);
+	if (pb_or_pa)
+	{
+		ft_putstr_fd(pb_or_pa, 1);
+		ft_putstr_fd("\n", 1);
+	}
 }
