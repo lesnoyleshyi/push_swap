@@ -79,8 +79,17 @@ ch_leaks_double :	${NAME}
 ch_leaks_m_int 	:	${NAME}
 					leaks -atExit -- ./push_swap  4 2 55 7 2147483648
 
+ch_leaks_check 	:	${NAME} checker
+					leaks -atExit -- ./push_swap 2 4 6 0 1 | ./checker 2 4 6 0 1
+
 run			:	${NAME}
 				./push_swap 0 1 3 2 7 5 6 4 10 9 8 -100 2147483647
+
+run_double :	${NAME}
+				./push_swap  4 2 4 8 7
+
+run_max_int :	${NAME}
+				./push_swap  4 2 4 8 7 2147483648 -2147483649
 
 run_two		:	${NAME}
 				./push_swap 10 5
