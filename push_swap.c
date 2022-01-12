@@ -18,7 +18,7 @@ int	main(int argc, char *argv[])
 	t_list	*stack_b;
 
 	if (argc < 3)
-		ft_perror_and_exit("Error\nYou must provide at least two integers\n");
+		return (0);
 	ft_get_stack_a(&stack_a, argv);
 	ft_index_this_list(stack_a);
 	if (ft_is_cir_sorted(stack_a))
