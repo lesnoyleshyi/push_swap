@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_presort(t_list **stack_a, t_list **stack_b)
+void	ft_presort(t_list **stack_b, t_list **stack_a)
 {
 	int	top_score;
 	int	cur_len;
@@ -25,7 +25,7 @@ void	ft_presort(t_list **stack_a, t_list **stack_b)
 		top_score = (*stack_a)->score;
 		if (top_score == 0 || top_score == a_len - 1 || top_score == a_len / 2)
 		{
-			ft_choose_rotate(stack_a, 0, a_len / 2, a_len - 1);
+			ft_rotate(stack_a, "ra");
 			continue ;
 		}
 		if (top_score < a_len / 2)
@@ -38,33 +38,4 @@ void	ft_presort(t_list **stack_a, t_list **stack_b)
 		}
 		cur_len = ft_lstsize(*stack_a);
 	}
-}
-
-void	ft_choose_rotate(t_list **stack_a, int min, int med, int max)
-{
-	int		cost_ra;
-	int		pos;
-	int		last_durex_ind;
-	t_list	*nod;
-
-	nod = *stack_a;
-	cost_ra = 0;
-	while (nod && nod->score == min && nod->score == med && nod->score == max)
-	{
-		cost_ra++;
-		nod = nod->next;
-	}
-	nod = *stack_a;
-	pos = 0;
-	while (nod)
-	{
-		if (nod->score == min || nod->score == med || nod->score == max)
-			last_durex_ind = pos;
-		nod = nod->next;
-		pos += 1;
-	}
-	if (cost_ra >= ft_lstsize(*stack_a) - last_durex_ind)
-		ft_rotate(stack_a, "ra");
-	else
-		ft_rev_rotate(stack_a, "rra", 1);
 }

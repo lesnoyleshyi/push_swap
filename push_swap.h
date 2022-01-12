@@ -30,8 +30,7 @@ void	ft_swap_nodes_content(t_list *cur_node, t_list *next_node);
 void	ft_index_this_list(t_list *list_to_index);
 void	ft_write_to_score_field(t_list *list_to_index, t_list *sorted_list);
 
-void	ft_presort(t_list **stack_a, t_list **stack_b);
-void	ft_choose_rotate(t_list **stack_a, int min, int med, int max);
+void	ft_presort(t_list **stack_b, t_list **stack_a);
 
 void	ft_score_stack_b(t_list *stack_b, t_list *stack_a);
 int		ft_get_rb_cost(int el_value, t_list *stack_b);
@@ -43,6 +42,8 @@ int		ft_get_min_cost(t_list *elem, t_list *stack_b, t_list *stack_a);
 
 void	ft_little_cir_sort(t_list **stack, char *sa_or_sb);
 void	ft_cir_sort_three(t_list **stack, char *sa_or_sb);
+void	ft_sort_five(t_list **stack_b, t_list **stack_a);
+void	ft_sort_three(t_list **stack, char *sa_or_sb);
 void	ft_sort_two(t_list **stack, char *sa_or_sb);
 
 int		ft_is_cir_sorted(t_list *stack);
@@ -50,7 +51,7 @@ int		ft_get_min_val(t_list *stack);
 void	ft_n1(int *p_flg, t_list **p_lnode, t_list **p_node, t_list *stack);
 int		ft_n2(int next_val, int min_val, int flag, t_list *last_node);
 
-void	ft_move_back_from_stack_b(t_list **stack_a, t_list **stack_b);
+void	ft_move_back_from_stack_b(t_list **stack_b, t_list **stack_a);
 
 t_list	*ft_get_cheapest_node(t_list *stack_b);
 void	ft_cheapest_move(t_list *node_to_move, t_list **dst, t_list **src);

@@ -27,9 +27,14 @@ int	main(int argc, char *argv[])
 		ft_lstclear(&stack_a, free);
 		return (0);
 	}
-	ft_presort(&stack_a, &stack_b);
-	ft_little_cir_sort(&stack_a, "sa");
-	ft_move_back_from_stack_b(&stack_a, &stack_b);
+	if (argc == 6)
+		ft_sort_five(&stack_b, &stack_a);
+	else
+	{
+		ft_presort(&stack_b, &stack_a);
+		ft_little_cir_sort(&stack_a, "sa");
+		ft_move_back_from_stack_b(&stack_b, &stack_a);
+	}
 	ft_final_sort(&stack_a);
 	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);
